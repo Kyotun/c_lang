@@ -4,6 +4,8 @@ int getRowNumber();
 int getColumnNumber();
 int dimensionController(int *r, int *c);
 
+void printArray2D(int r, int c, int arr[r][c]);
+
 int main(void) {
 
     int request = 0;
@@ -105,5 +107,19 @@ int dimensionController(int *r, int *c){
   } else{
     printf("\nThank you for the reasonable dimension! There isn't none-existing dimension(0 dimension).\n");
     return 0;
+  }
+}
+
+
+void printArray2D(int r, int c, int arr[r][c]){
+  
+  for(int i = 0; i<r; i++){
+    for(int j = 0; j<c; j++){
+      if(j < c-1){
+        printf("%d ", arr[i][j]);
+      } else{
+        printf("%d\n", arr[i][j]);
+      }
+    }
   }
 }
