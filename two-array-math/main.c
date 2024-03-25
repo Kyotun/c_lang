@@ -8,6 +8,7 @@ int mulController(int *c1, int *r2);
 
 void getArray2D(int r, int c, int arr[r][c]);
 void printArray2D(int r, int c, int arr[r][c]);
+void arrayMul2D(int r1, int c1, int r2, int c2, int arr_1[r1][c1], int arr_2[r2][c2], int arr_out[r1][c2]);
 void arraySubstract2D(int sequence, int r, int c, int arr_1[r][c], int arr_2[r][c], int arr_out[r][c]);
 void arrayAdd2D(int r, int c, int arr_1[r][c], int arr_2[r][c], int arr_out[r][c]);
 void transposer2D(int r, int c, int arr[r][c], int arr_transpose[c][r]);
@@ -255,6 +256,22 @@ void printArray2D(int r, int c, int arr[r][c]){
       } else{
         printf("%d\n", arr[i][j]);
       }
+    }
+  }
+}
+
+void arrayMul2D(int r1, int c1, int r2, int c2, int arr_1[r1][c1], int arr_2[r2][c2], int arr_out[r1][c2]){
+  int value_1, value_2, value_out, multiplication;
+  
+  for(int i = 0; i<r1; i++){
+    for(int j = 0; j<c2; j++){
+      for(int k = 0; k<c1; k++){
+        value_1 = arr_1[i][k];
+        value_2 = arr_2[k][j];
+        multiplication = value_1*value_2;
+        value_out = multiplication + value_out; 
+      }
+      arr_out[i][j] = value_out;
     }
   }
 }
