@@ -8,6 +8,7 @@ void getArray2D(int r, int c, int arr[r][c]);
 void printArray2D(int r, int c, int arr[r][c]);
 void arraySubstract2D(int sequence, int r, int c, int arr_1[r][c], int arr_2[r][c], int arr_out[r][c]);
 void arrayAdd2D(int r, int c, int arr_1[r][c], int arr_2[r][c], int arr_out[r][c]);
+void transposer2D(int r, int c, int arr[r][c], int arr_transpose[c][r]);
 
 int main(void) {
 
@@ -221,6 +222,15 @@ void arrayAdd2D(int r, int c, int arr_1[r][c], int arr_2[r][c], int arr_out[r][c
       value_2 = arr_2[i][j];
       addition = value_1+value_2;
       arr_out[i][j] = addition;
+    }
+  }
+}
+
+void transposer2D(int r, int c, int arr[r][c], int arr_transpose[c][r]){
+
+  for(int i = 0; i<r; i++){
+    for(int j = 0; j<c; j++){
+      arr_transpose[j][i] = arr[i][j];
     }
   }
 }
