@@ -2,6 +2,7 @@
 
 int getRowNumber();
 int getColumnNumber();
+int dimensionController(int *r, int *c);
 
 int main(void) {
 
@@ -94,4 +95,15 @@ int getColumnNumber(){
   printf("Please enter the number of column:");
   scanf("%d", &c);
   return c;
+}
+
+int dimensionController(int *r, int *c){
+  if( *r == 0 || *c == 0){
+    printf("Please give a reasonable array size/format.\n");
+    printf("Dimensions of arrays cannot be 0.\n");
+    return 1;
+  } else{
+    printf("\nThank you for the reasonable dimension! There isn't none-existing dimension(0 dimension).\n");
+    return 0;
+  }
 }
