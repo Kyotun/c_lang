@@ -67,7 +67,41 @@ int main(void) {
             }
 
         } else if(request == 2){ //Addition
-            return 0;
+        int r, c;
+
+        printf("\nNote that arrays should have the same number of rows and columns.\n");
+        printf("Please give the information of the arrays:\n");
+        r = getRowNumber();
+        c = getColumnNumber();
+        
+        if(dimensionController(&r, &c) == 1){
+            return 1;
+        } else{
+            
+            int arr_one[r][c];
+            int arr_two[r][c];
+            int arr_out[r][c];
+
+            printf("\nNow you have to enter the elements of the first array.\nBe ready!\n");
+            getArray2D(r, c, arr_one);
+        
+            printf("Thank you for the first array. The first array looks like this(hopefully):\n");
+            printArray2D(r, c, arr_one);
+
+            printf("\nNow it is time for the second array.\nBe ready!\n");
+            getArray2D(r, c, arr_two);
+        
+            printf("Thank you for the second array too. The second one looks like this(hopefully):\n");
+            printArray2D(r, c, arr_two);
+
+            printf("\nYou created the arrays. Thank you for the inputs.\n");
+            printf("\nNow I can calculate the output array!\n");
+            arrayAdd2D(r, c, arr_one, arr_two, arr_out);
+            
+            printf("The output array looks like this( hopefully :) ):\n");
+            printArray2D(r, c, arr_out);
+            printf("\n");
+      }
 
         } else if(request == 3){ //Transpose
             return 0;
