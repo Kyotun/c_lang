@@ -34,5 +34,13 @@ int main(void) {
         }
     }
 
+    int out = 0;
+    for(int a; a<4; a++){
+        for(int b; b<5; b++){
+        out = arr_out[a][b];
+        printf("%d", out);
+        }
+    }
+
     return 0;
 }
