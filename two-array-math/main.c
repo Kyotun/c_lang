@@ -4,6 +4,7 @@ int getRowNumber();
 int getColumnNumber();
 int dimensionController(int *r, int *c);
 int addsubController(int *r1, int *c1, int *r2, int *c2);
+int mulController(int *c1, int *r2);
 
 void getArray2D(int r, int c, int arr[r][c]);
 void printArray2D(int r, int c, int arr[r][c]);
@@ -220,6 +221,17 @@ int addsubController(int *r1, int *c1, int *r2, int *c2){
   } else {
     printf("\nArrays can be added to or substracted from each other. Thank you!\n");
     return 0;
+  }
+}
+
+int mulController(int *c1, int *r2){
+  
+  if(*c1 == *r2){
+    printf("\nArrays can be multiplied! Thank you for the compatible dimensions.\n");
+    return 0;
+  } else{
+    printf("\nArrays cannot be multiplied. Arrays should look like this:\n arr_one: mxn | arr_two: nxk\n");
+    return 1;
   }
 }
 
