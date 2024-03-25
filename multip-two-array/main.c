@@ -19,5 +19,20 @@ int main(void) {
     printf("Please enter the number of columns of the second array:");
     scanf("%d", &c2);
 
+    int r3,c3, value_1, value_2, value_out, multiplication = 0;
+    int arr_out[4][5];
+
+    for(int i; i<r1-1; i++){
+        for(int j; j<c2-1; j++){
+            for(int k; k<c1-1; k++){
+            value_1 = arr_1[i][k];
+            value_2 = arr_2[k][j];
+            multiplication = value_1*value_2;
+            value_out = multiplication + value_out; 
+            }
+            arr_out[i][j] = value_out;
+        }
+    }
+
     return 0;
 }
