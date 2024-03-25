@@ -18,6 +18,9 @@ int main(void) {
 
     int arr_one[r1][c1];
 
+    create2DArray(r1, c1, arr_one);
+    print2DArray(r1, c1, arr_one);
+
     return 0;
 }
 
