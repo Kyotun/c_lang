@@ -4,6 +4,7 @@ int getRowNumber();
 int getColumnNumber();
 int dimensionController(int *r, int *c);
 
+void getArray2D(int r, int c, int arr[r][c]);
 void printArray2D(int r, int c, int arr[r][c]);
 
 int main(void) {
@@ -110,6 +111,16 @@ int dimensionController(int *r, int *c){
   }
 }
 
+
+void getArray2D(int r, int c, int arr[r][c]){
+
+  for(int i = 0; i<r; i++){
+    for(int j = 0; j<c; j++){
+      printf("Enter the row:%d | column:%d element:", i, j);
+      scanf("%d", &arr[i][j]);
+    }
+  }
+}
 
 void printArray2D(int r, int c, int arr[r][c]){
   
