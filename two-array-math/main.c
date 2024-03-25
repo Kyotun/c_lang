@@ -3,6 +3,7 @@
 int getRowNumber();
 int getColumnNumber();
 int dimensionController(int *r, int *c);
+int addsubController(int *r1, int *c1, int *r2, int *c2);
 
 void getArray2D(int r, int c, int arr[r][c]);
 void printArray2D(int r, int c, int arr[r][c]);
@@ -168,6 +169,18 @@ int dimensionController(int *r, int *c){
     return 1;
   } else{
     printf("\nThank you for the reasonable dimension! There isn't none-existing dimension(0 dimension).\n");
+    return 0;
+  }
+}
+
+int addsubController(int *r1, int *c1, int *r2, int *c2){
+  if(*r1 != *r2 || *c1 != *c2){
+    printf("\nArray sizes should be compatible.");
+    printf("Example:\n");
+    printf("Two of mxn array. M can be equal to n, but row and column numbers of both arrays should be exactly the same.\n");
+    return 1;
+  } else {
+    printf("\nArrays can be added to or substracted from each other. Thank you!\n");
     return 0;
   }
 }
