@@ -78,7 +78,7 @@ int main(void) {
         
         if(dimensionController(&r, &c) == 1){
             return 1;
-        } else{
+        } else {
             
             int arr_one[r][c];
             int arr_two[r][c];
@@ -106,7 +106,31 @@ int main(void) {
       }
 
         } else if(request == 3){ //Transpose
-            return 0;
+            int r, c;
+
+            printf("Please give the information of the array:\n");
+            r = getRowNumber();
+            c = getColumnNumber();
+
+            if(dimensionController(&r, &c) == 1){
+                return 1;
+            } else {
+                int arr[r][c];
+                int arr_transpose[c][r];
+
+                printf("\nNow you have to enter the elements of the array.\nBe ready!\n");
+                getArray2D(r, c, arr);
+            
+                printf("Thank you for the inputs array. The first array looks like this(hopefully):\n");
+                printArray2D(r, c, arr);
+
+                printf("Everything is set. Now I can calculate the transpose of the array.");
+                transposer2D(r, c, arr, arr_transpose);
+                
+                printf("The transpose array looks like this( hopefully :) ):\n");
+                printArray2D(c, r, arr_transpose);
+                printf("\n");
+            }
 
         } else if(request == 100){
             printf("See you later!");
