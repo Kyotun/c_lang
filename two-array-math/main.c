@@ -28,7 +28,45 @@ int main(void) {
         scanf("%d", &request);
 
         if(request == 0){ //Multiplication
-            return 0;
+            int r1, c1, r2, c2;
+
+            printf("Please give the information of first array:\n");
+            r1 = getRowNumber();
+            c1 = getColumnNumber();
+            
+            printf("\nNow it's time for the second array:\n");
+            r2 = getRowNumber();
+            c2 = getColumnNumber();
+
+            if(dimensionController(&r1, &c1) == 1 || dimensionController(&r2, &c2) == 1 || mulController(&c1, &r2) == 1){
+                return 1;
+            } else{
+            
+                int arr_one[r1][c1];
+                int arr_two[r2][c2];
+                
+                printf("\nNow you have to enter the elements of the first array.\nBe ready!\n");
+                getArray2D(r1, c1, arr_one);
+            
+                printf("Thank you for the first array. The first array looks like this(hopefully):\n");
+                printArray2D(r1, c1, arr_one);
+            
+                printf("\nNow it is time for the second array.\nBe ready!\n");
+                getArray2D(r2, c2, arr_two);
+            
+                printf("Thank you for the second array too. The second one looks like this(hopefully):\n");
+                printArray2D(r2, c2, arr_two);
+            
+            
+                printf("\nYou created the arrays. Thank you for the inputs.\n");
+                printf("\nNow I can calculate the output array!\n");
+                int arr_out[r1][c2];
+            
+                arrayMul2D(r1, c1, r2, c2, arr_one, arr_two, arr_out);
+            
+                printf("And the output array looks like this( hopefully :) ):\n");
+                printArray2D(r1, c2, arr_out);
+            }
 
         } else if(request == 1){ //Substraction
             int r, c;
