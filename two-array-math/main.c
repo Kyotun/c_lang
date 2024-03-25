@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int getRowNumber();
+int getColumnNumber();
 
 int main(void) {
 
@@ -86,4 +87,11 @@ int getRowNumber(){
   printf("Please enter the number of rows:");
   scanf("%d", &r);
   return r;
+}
+
+int getColumnNumber(){
+  int c;
+  printf("Please enter the number of column:");
+  scanf("%d", &c);
+  return c;
 }
