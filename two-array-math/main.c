@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+int getRowNumber();
+
 int main(void) {
 
     int request = 0;
@@ -74,6 +76,14 @@ int main(void) {
             printf("Try again.");
             return 1;
         }
+    }
 
     return 0;
+}
+
+int getRowNumber(){
+  int r;
+  printf("Please enter the number of rows:");
+  scanf("%d", &r);
+  return r;
 }
