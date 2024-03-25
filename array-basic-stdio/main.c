@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void create2DArray(int r, int c, int arr[r][c]);
+
 int main(void) {
     int r1, c1, r2, c2;
 
@@ -14,6 +16,15 @@ int main(void) {
     scanf("%d", &c2);
 
     int arr_one[r1][c1];
-    
+
     return 0;
+}
+
+void create2DArray(int r, int c, int arr[r][c]){
+  for(int i = 0; i<r; i++){
+    for(int j = 0; j<c; j++){
+      printf("Enter the row:%d | column:%d element:", i, j);
+      scanf("%d", &arr[i][j]);
+    }
+  }
 }
