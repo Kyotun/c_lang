@@ -6,6 +6,7 @@ int dimensionController(int *r, int *c);
 
 void getArray2D(int r, int c, int arr[r][c]);
 void printArray2D(int r, int c, int arr[r][c]);
+void arrayAdd2D(int r, int c, int arr_1[r][c], int arr_2[r][c], int arr_out[r][c]);
 
 int main(void) {
 
@@ -165,6 +166,19 @@ void printArray2D(int r, int c, int arr[r][c]){
       } else{
         printf("%d\n", arr[i][j]);
       }
+    }
+  }
+}
+
+void arrayAdd2D(int r, int c, int arr_1[r][c], int arr_2[r][c], int arr_out[r][c]){
+  int value_1, value_2, value_out, addition;
+
+  for(int i = 0; i<r; i++){
+    for(int j = 0; j<c; j++){
+      value_1 = arr_1[i][j];
+      value_2 = arr_2[i][j];
+      addition = value_1+value_2;
+      arr_out[i][j] = addition;
     }
   }
 }
